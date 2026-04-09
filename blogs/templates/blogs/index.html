@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+</head>
+<body>
+    <h1>Blogs Main Page</h1>
+    <p>{{ greeting }}</p>
+    <p>{{ greeting|length}}</p>
+    <p>{{view_count}}</p>
+    {% if view_count >= 10 %}
+        <p> 많은 사람들이 본다</p>
+    {% else %}
+        <p> 별로 안들어온다.</p>
+    {% endif %}
+</body>
+<body>
+    <ul>
+    {% for post in posts %}
+        <li>
+            <strong>{{ post.title }}</strong>
+            <p>{{ post.content }}</p>
+            <hr>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
